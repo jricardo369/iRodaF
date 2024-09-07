@@ -1,0 +1,108 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Editar Clase</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="eliminarClase()">
+        <ion-icon color="danger" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #editarClase="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Nombre de la clase</ion-label>
+              <ion-input [(ngModel)]="ec.nombre" name="nombre" type="text" value="{{nombre}}" >
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Hora inicio</ion-label>
+              <ion-input [(ngModel)]="ec.horaInicio" name="horaInicio" type="tel" maxlength="2" value="{{horaInicio}}"
+                >
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Hora fin</ion-label>
+              <ion-input [(ngModel)]="ec.horaFin" name="horaFin" type="tel" maxlength="2" value="{{horaFin}}" >
+              </ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <div style="display: flex;flex-direction: column;width: 100%;">
+                <ion-label style="color:gray; font-size: 14px;margin-top:16px;margin-bottom: 5px;">Horario</ion-label>
+                <div>
+                  <ion-segment (ionChange)="segmentChanged($event)" value="{{horario}}" name="horario" type="text"
+                    [(ngModel)]="ec.horario" >
+                    <ion-segment-button value="M">
+                      <ion-label>Matutino</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="V">
+                      <ion-label>Vespertino</ion-label>
+                    </ion-segment-button>
+                  </ion-segment>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Personas</ion-label>
+              <ion-input [(ngModel)]="ec.personas" name="personas" maxlength="2" type="tel" value="{{personas}}"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Coach</ion-label>
+              <!--<ion-input [(ngModel)]="ec.profesor" name="profesor" type="text" value="{{profesor}}" required>
+              </ion-input>-->
+              <ion-select [(ngModel)]="idUs" [required]="true" name="ent" (ngModelChange)="optionsFn()">
+                <ion-select-option *ngFor="let option of entrenadores" [value]="option.idUsuario">
+                  {{ option.nombre }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-label style="color:gray" position="stacked">Fecha</ion-label>
+              <ion-input name="dia" type="date" [(ngModel)]="ec.dia" value="{{dia}}" ></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <div style="display: flex;flex-direction: column;width: 100%;">
+                <ion-label style="color:gray; font-size: 14px;margin-top:16px;margin-bottom: 5px;">Estatus</ion-label>
+                <div>
+                  <ion-segment (ionChange)="segmentChanged($event)" name="estatus" type="text" value="{{estatus}}"
+                    [(ngModel)]="ec.estatus" >
+                    <ion-segment-button value="1">
+                      <ion-label>Activado</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="0">
+                      <ion-label>Desactivado</ion-label>
+                    </ion-segment-button>
+                  </ion-segment>
+                </div>
+              </div>
+            </ion-item>
+          </div>
+          <br>
+          <div>
+            <ion-row>
+              <ion-col>
+                <ion-button (click)="editarClass(editarClase)" size="large" expand="block" class="btndorado">Editar
+                </ion-button>
+              </ion-col>
+              <!-- <ion-col>
+                  <ion-button size="large" expand="block" color="danger" (click)="eliminarClase()">Eliminar clase</ion-button>
+                </ion-col> -->
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

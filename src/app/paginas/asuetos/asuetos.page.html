@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Asuetos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!--<ion-button  (click)="mostrarModal()">
+        <ion-icon color="danger" slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>-->
+      <ion-button (click)="nuevoAsueto()">
+        <ion-icon class="dorado" slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- <ion-searchbar placeholder="Buscar" animated (ionChange)="buscar($event)" [debounce]="250">
+  </ion-searchbar> -->
+  <ion-searchbar placeholder="Buscar" [debounce]="250" animated (ionChange)="buscarAsueto($event)" inputmode="text">
+  </ion-searchbar>
+
+</ion-header>
+<ion-content>
+
+  <ion-list style="text-align: center;" *ngIf="listado?.respuesta == ''">
+    <label> Sin asuetos</label>
+  </ion-list>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 60%">
+                </ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 50%">
+                </ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines class="animated fast fadeInDown">
+    <ion-item-sliding *ngFor="let Asuetos of listado?.respuesta " size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-item lines="none" color="gray" detail="false" class="ion-no-padding">
+        <ion-card style="padding:3px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <img class="asuetoimg" src="assets/img/coffee-time.png">
+                <label style="font-weight: bold; font-size: 12px;">
+                  Descanso en la clase {{Asuetos.claseDescripcion}}
+                </label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <label style="font-weight: bold; font-size: 12px; color:rgb(187, 185, 185)">
+                  {{Asuetos.fechaDescripcion}}
+                </label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="confirmEliminar(Asuetos.fecha)">
+          <ion-icon style="zoom: 2;" slot="top" name="trash-outline"></ion-icon>
+          Eliminar</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

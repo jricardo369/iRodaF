@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Lugares</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="regresar()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../../assets/img/iiroda.png"></ion-img>
+  <div style="text-align: center;">
+
+    <div *ngIf="conGrid == 'false' && mostrarLugares== 'true'">
+      <label style="font-size: 14px;">Seleccione su lugar en la clase de {{descripcionHorario}}</label><br>
+      <label style="font-size: 14px;">el dia {{fechaf}}</label><br>
+    </div>
+
+    <div *ngIf="conGrid == 'true'">
+      <label style="font-size: 14px;">Usted tiene apartado el lugar en {{descripcionHorario}}</label><br>
+      <label style="font-size: 14px;">el dia {{fechaf}}</label><br>
+      <label style="font-size: 14px;">el el lugar {{lugar}}</label><br><br><br><br>
+      <label style="font-size: 12px;">Desea eliminar su asistencia?</label><br>
+
+      <ion-button (click)="eliminarAsistencia()" type="submit" size="large" class="btndorado">
+        Eliminar asistencia</ion-button>
+        
+    </div>
+
+    <!--<div *ngIf="conGrid == 'false' && mostrarLugares== 'false'">
+      <br>
+      <label *ngIf="listaEspera == 'false'" style="font-size: 14px;">La clasa esta llena, ¿Desea agregar a lista de espera?</label><br>
+      <label *ngIf="listaEspera == 'true'" style="font-size: 14px;">¿Desea eliminar a lista de espera?</label><br>
+
+      <ion-button *ngIf="listaEspera == 'false'" (click)="agregarListaEspera()" type="submit" size="large" class="btndorado">
+        Agregar</ion-button>
+
+        <ion-button *ngIf="listaEspera == 'true'" (click)="eliminarListaEspera()" type="submit" size="large" class="btndorado">
+          Eliminar</ion-button>
+    </div>-->
+
+    <div *ngIf="conGrid == 'false' && mostrarLugares== 'false'">
+      <br>
+      <label *ngIf="listaEspera == 'false'" style="font-size: 14px;">La clasa esta llena, espera a que se desocupe un lugar para poder asistir !!</label><br>
+
+    </div>
+  </div>
+
+  <ion-grid *ngIf="conGrid == 'false' && mostrarLugares== 'true'">
+    <ion-row *ngFor="let row of lugaresServicio ">
+      <ion-col *ngFor="let lugar of row">
+        <ion-card class="center" [class.seleccionado]="lugar.seleccionado">
+          <ion-icon color="danger" *ngIf="lugar.numero == 18" name="bicycle-outline"></ion-icon>
+
+          <ion-icon color="primary" *ngIf="lugar.numero != 18 && lugar.numero < 19 && lugar.seleccionado == false"
+            name="bicycle-outline" (click)="apartarLugar(lugar)"></ion-icon>
+          <ion-icon color="medium" *ngIf="lugar.numero != 18 && lugar.numero < 19 && lugar.seleccionado == true"
+            name="bicycle-outline"></ion-icon>
+          <ion-icon *ngIf="lugar.numero == 19"></ion-icon>
+          <ion-icon *ngIf="lugar.numero == 20"></ion-icon>
+
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <ion-toolbar *ngIf="conGrid == 'true'">
+    <div style="text-align: center;">
+      <label class="anuncio" style="font-size: 12px;">Recuerda que para no tener multa es necesario </label><br>
+      <label class="anuncio" style="font-size: 12px;">cancelar la clase {{horasCancelacion}} horas antes</label>
+    </div>
+  </ion-toolbar>
+
+</ion-footer>

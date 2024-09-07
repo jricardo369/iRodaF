@@ -1,0 +1,137 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid> 
+
+    <!-- Menu administrador -->
+    <ion-row *ngIf="idrol === 1" >
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="clases">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Clases</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img (click)="clases()" class="icono" src='assets/img/clases.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="perfiles">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Perfiles</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img (click)="perfil()" class="icono" src='assets/img/perfiles2.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="asuetos">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Dias de descanso</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img (click)="asuetos()" class="icono" src='assets/img/calendar-pen.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="paquetes">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Calendario</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img  (click)="caladmin()" class="icono" src='assets/img/calendar-plus.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+    </ion-row>
+    
+    <!-- Fin Menu Administrador -->
+
+    <!-- Menu Usuario -->
+    <ion-row *ngIf="idrol === 2">
+
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="perfiles">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Perfil</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img (click)="user()" class="icono" src='assets/img/perfil2.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="paquetes">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Calendario</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img  (click)="calalumno()" class="icono" src='assets/img/calendar-plus.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+    </ion-row>
+    <!-- Fin Menu Usuario -->
+
+    <!-- Menu entrenador -->
+    <ion-row *ngIf="idrol === 3" style="margin:auto">
+      
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="perfiles">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Perfil</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img (click)="user()" class="icono" src='assets/img/perfil2.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="paquetes">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Calendario</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img  (click)="caladmin()" class="icono" src='assets/img/calendar-plus.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+    </ion-row>
+    <!-- Fin Menu entrenador -->
+
+  </ion-grid>
+  <div *ngIf="idrol === 2 && mensaje != ''" class="rem" style="text-align: justify;margin:25px;">
+    <ion-img class="iconon" src='assets/img/bell.png' ></ion-img>
+    <label style="font-size:12px;">{{mensaje}}</label>
+  </div>
+
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <label style="font-size:10px">{{nombre}}</label>
+  <ion-toolbar (click)="confirmCerrar()">
+    <label class="label-cerrar-sesion">Cerrar Sesión</label>
+  </ion-toolbar>
+</ion-footer>

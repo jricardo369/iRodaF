@@ -1,0 +1,28 @@
+ion-content ion-card {
+  width: 100%;
+  margin: 10px;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+.fechainicio {
+  clear: right;
+  float: right;
+}
+
+.label-membresiavenc {
+  background-color: #f8d3ff;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #bd0fe1;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.sinPaquete {
+  color: gray;
+}

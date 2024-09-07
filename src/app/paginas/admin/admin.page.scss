@@ -1,0 +1,147 @@
+ion-col {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+ion-card {
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  margin: 0 !important;
+}
+
+ion-card.paquetes {
+  background-color: #d9cae7;
+}
+
+.m-paquetes {
+  background-color: #d9cae7;
+  border-radius: 7px;
+  padding: 15px;
+  margin: 2px;
+  width: 170px;
+}
+
+.m-clases {
+  background-color: #a3c6f0;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 2px;
+  width: 170px;
+}
+
+.m-perfiles {
+  background-color: #a0d9bc;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 2px;
+  width: 170px;
+}
+
+.m-asuetos {
+  background-color: #d2d2d2;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 2px;
+  width: 170px;
+}
+
+.m-label {
+  font-size: 16px;
+  float: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.m-img {
+  width: 30%;
+  float: right;
+  margin-top: 5px;
+}
+
+ion-card.clases {
+  background-color: #a3c6f0;
+}
+
+ion-card.perfiles {
+  background-color: #a0d9bc;
+}
+
+ion-card.asuetos {
+  background-color: #d2d2d2;
+}
+
+ion-card-title {
+  text-align: left;
+}
+
+ion-card-header {
+  padding: 7px;
+}
+
+ion-card-subtitle {
+  text-align: center;
+}
+
+ion-img {
+  display: block;
+  float: right;
+  clear: right;
+}
+
+ion-img::part(image) {
+  width: 70%; /* or whatever value */
+  /* you can set the height value too */
+  float: right;
+}
+
+.footer {
+  // min-height: 5em;
+  height: auto;
+  font-size: 14px;
+  text-align: center;
+}
+
+.icono {
+  width: 50%;
+}
+
+ion-label {
+  padding: 5px;
+}
+
+.titulocard {
+  font-size: 16px;
+}
+
+.label-cerrar-sesion {
+  background-color: #d6d6d6;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #626262;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.rem {
+  background-color: #fff79c;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #736d2c;
+  border-radius: 3px;
+  font-size: 8px;
+}
+
+.iconon {
+  margin-top: 3px;
+  width: 10%;
+}

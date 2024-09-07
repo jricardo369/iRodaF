@@ -1,0 +1,120 @@
+ion-card-title {
+  text-align: center;
+}
+
+ion-content ion-card {
+  width: 100%;
+  margin: 10px;
+}
+
+.image-center {
+  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100px !important; //any size
+  max-height: 100px !important;
+}
+
+.multas {
+  float: right;
+  clear: right;
+  background-color: #ffced4;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #d0011b;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.lvencimiento {
+  color: gray;
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+ion-c-status {
+  background: red;
+}
+
+.label-usuario {
+  background-color: #cee3fc;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #1a32d1;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-usuario-c {
+  background-color: #c7f1ea;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #3d7168;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-usuario-a {
+  background-color: #fbe5ca;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #917147;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-activo {
+  background-color: #d9f7b8;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #417505;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-inactivo {
+  background-color: #ffced4;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #d0011b;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-faltapago {
+  background-color: #efb810;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.label-membresiavenc {
+  background-color: #f7e5fb;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #bd0fe1;
+  border-radius: 15px;
+  font-size: 12px;
+}

@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Agregar usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil" text="" class="dorado"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background animated slow fadeInDown">
+  <form #guardarPerfil="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <!-- <div>
+              <ion-img src='assets/icon/nuevouser.svg'></ion-img>
+            </div> -->
+            <ion-item>
+              <ion-label style="color:gray">Tipo</ion-label>
+              <ion-select multiple="false" cancelText="Cancelar" okText="Aceptar" [(ngModel)]="nu.rol" name="rol"
+                type="text" required>
+                <ion-select-option value="1">Administrador</ion-select-option>
+                <ion-select-option value="2">Usuario</ion-select-option>
+                <ion-select-option value="3">Entrenador</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Usuario</ion-label>
+              <ion-input [(ngModel)]="nu.usuario" name="usuario" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Contraseña</ion-label>
+              <ion-input [(ngModel)]="nu.contrasenia" name="contrasenia" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Nombre</ion-label>
+              <ion-input [(ngModel)]="nu.nombre" name="nombre" type="text" required></ion-input>
+            </ion-item>
+
+
+            <ion-item lines="none">
+              <div style="display: flex;flex-direction: column;width: 100%;">
+                <ion-label style="color:gray; font-size: 14px;margin-top:24px;margin-bottom: 5px;">Estatus</ion-label>
+                <div>
+                  <ion-segment (ionChange)="segmentChanged($event)" name="sexo" type="text" [(ngModel)]="nu.sexo"
+                    required>
+                    <ion-segment-button value="F">
+                      <ion-label>Femenino</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="M">
+                      <ion-label>Masculino</ion-label>
+                    </ion-segment-button>
+                  </ion-segment>
+                </div>
+              </div>
+            </ion-item>
+
+            <!-- <ion-item>
+              <ion-label position="floating"></ion-label>
+              <ion-select placeholder="Sexo" name="sexo" type="text" [(ngModel)]="nu.sexo" required>
+                <ion-select-option value="F" >Femenino
+                </ion-select-option>
+                <ion-select-option value="M" >Masculino
+                </ion-select-option>
+              </ion-select>
+            </ion-item> -->
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Correo electrónico</ion-label>
+              <ion-input [(ngModel)]="nu.correo_electronico" name="correo_electronico" type="email" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Telefono</ion-label>
+              <ion-input [(ngModel)]="nu.telefono" name="telefono" type="tel" required></ion-input>
+            </ion-item>
+          </div>
+          <br>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="nuevoUsuario(guardarPerfil)" type="submit" size="large" expand="block"
+                class="btndorado">
+                Registrar</ion-button>
+            </ion-col>
+          </ion-row>
+          <div padding>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">AVISO DEL ESTUDIO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <div style="text-align: center;"><img style = "width: 60%;" src="../../assets/img/iiroda.png"></div>
+  <div style="margin-bottom: 10px;text-align: center;">
+    <label style="font-size: 14px;">* Las clases tienen una duración de 45 min, solo cuentas con 10 min de tolerancia para poder ingresar.</label><br>
+   <label style="font-size: 14px;">* Los paquetes son intransferibles, sólo la persona que adquirió el paquete podrá tener acceso a las clases.</label><br>
+   <label style="font-size: 14px;">* Si tiene alguna lesión o enfermedad que presente un riesgo para la práctica del ejercicio físico y para su salud, favor de comunicarlo en recepción.</label><br> 
+   <label style="font-size: 14px;">* Está prohibido el uso del celular durante la clase.</label><br>  
+   <label style="font-size: 14px;">* IRoda cycling no se responsabiliza por lesiones, daños o accidentes dentro de nuestras instalaciones.</label><br>
+   <label style="font-size: 14px;">* El estudio cerrará los días festivos estipulados.</label><br>
+   <label style="font-size: 14px;">* Cuida y mantén limpio tu espacio, respeta tu lugar reservado en clase, no te cambies a otra bici sin haberlo consultado previamente en recepción o con el coach</label><br>
+   <label style="font-size: 14px;">* La política de cancelación es de {{horasCancelacion}} h antes de tu clase, para que la app te regrese tu crédito</label><br>
+   
+   <br>
+   <ion-item lines="none">
+    <div style="display: flex;flex-direction: column;width: 100%;">
+      <div>
+        <ion-checkbox style="font-size: 14px;" color="secondary" [(ngModel)]="isChecked">De acuerdo con los terminos y condiciones</ion-checkbox>
+      </div>
+    </div>
+  </ion-item>
+   <ion-button (click)="aceptar()" type="submit" size="large" class="btndorado">
+    Continuar</ion-button>
+
+  </div>
+</ion-content>

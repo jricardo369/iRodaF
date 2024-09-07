@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado" >Mi Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cambiarpass()">
+        <ion-icon class="dorado" slot="icon-only" name="lock-open-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-grid class="animated slow fadeInLeft">
+    <ion-row>
+      <ion-col size-md="6" size-lg="5" size-xs="12" size="16">
+        
+        <ion-col>
+           <div padding *ngIf="sexo === 'M'">
+            <ion-img src='assets/img/avatar-m.png'></ion-img>
+          </div>
+          <div *ngIf="sexo === 'F'">
+            <ion-img src='assets/img/avatar.png'></ion-img>
+          </div> 
+        </ion-col>
+        <div  style="text-align: center;margin-top:5px;">
+        <label *ngIf="rol === 2" (click)="verAsistencias()" class="misasis" style="font-size: 12px;">Ver mis asistencias</label>
+      </div>
+        <br>
+        <ion-col class="user-info-wrapper" size="8">
+          <h3 class="user-name"> {{nombre}} </h3>
+        </ion-col>
+        
+
+        <ion-col  size="12px">
+          <div class="anuncio" *ngIf="membresia !== undefined" style="text-align: center;">
+          <label  style="font-size: 12px;">{{membresia}}</label>
+        </div>
+        <div  style="text-align: center;margin-top:5px;">
+          <label *ngIf="confaltas === true && membresia !== undefined" class="multas" style="font-size: 12px;">{{mensajeM}}</label>
+          <label *ngIf="sinfaltas === true && membresia !== undefined" class="sin-multas" style="font-size: 12px;">{{mensajeM}}</label>
+        </div>
+        </ion-col>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-md="6" size-lg="5" size-xs="12" class="acomodar">
+
+        <div padding>
+          <ion-item>
+            <ion-label style="color:gray" position="stacked">Usuario</ion-label>
+            <ion-input type="text" disabled placeholder="{{user}}"></ion-input>
+          </ion-item>
+
+          <!--<ion-item>
+            <ion-label position="stacked">Sexo</ion-label>
+            <ion-input *ngIf="sexo === 'M'" type="text" disabled placeholder="Masculino"></ion-input>
+            <ion-input *ngIf="sexo === 'F'" type="text" disabled placeholder="Femenino"></ion-input>
+          </ion-item>-->
+
+          <ion-item>
+            <ion-label style="color:gray" position="stacked">Telefono</ion-label>
+            <!-- <h4 class="preference-name">Telefono</h4> -->
+            <ion-input name="telefono" type="tel" value="{{telefono}}" [(ngModel)]="eu.telefono" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color:gray" position="stacked">Correo electrónico</ion-label>
+
+            <ion-input name="correoElectronico" type="text" value="{{email}}" [(ngModel)]="eu.correoElectronico"
+              required></ion-input>
+          </ion-item>
+        </div>
+        <br>
+        <div>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="editarUser()" size="large" expand="block" class="btndorado">Editar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

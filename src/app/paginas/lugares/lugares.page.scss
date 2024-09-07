@@ -1,0 +1,62 @@
+ion-img {
+  width: 40%;
+  display: block;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.letra {
+  font-size: 14px;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.seleccionado {
+  background-color: rgb(
+    226,
+    225,
+    225
+  ); /* Puedes personalizar el color de fondo seleccionado */
+}
+
+ion-icon {
+  font-size: 40px;
+}
+
+ion-grid {
+  //border: 1px solid black;
+  transform: scale(0.8);
+  text-align: center;
+}
+
+button.seleccionado {
+  background-color: blue;
+  color: white;
+}
+
+button.rojo {
+  background-color: red;
+  color: white;
+}
+
+button.azul {
+  background-color: blue;
+  color: white;
+}
+
+ion-card,
+.card-ios,
+.card-md {
+  box-shadow: none !important;
+}
+
+.anuncio {
+  background-color: #b1e678;
+  padding: 5px;
+  color: #567419;
+  border-radius: 15px;
+  font-size: 8px;
+}

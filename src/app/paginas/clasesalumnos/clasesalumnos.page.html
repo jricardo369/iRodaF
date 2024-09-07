@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Horarios</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="calalumno" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list inset="true" class="animated fast fadeInDown">
+    <ion-item *ngFor="let Clases of listado?.respuesta; 
+      let indice=index;" href="asisalumno/{{Clases.idClase}}/{{Clases.nombre}}/{{Clases.profesor}}"
+      class="animated fast fadeInDown">
+      <ion-label>
+        <h2>Clase: {{Clases.nombre}} </h2>
+        <p>Profesor: {{Clases.profesor}}</p>
+        <p>Capacidad: {{Clases.personas}} personas</p>
+      </ion-label>
+      <p>
+        <ion-label *ngIf="Clases.horario == 'M'">
+          <h3>Turno <span class="green">{{Clases.horario}}</span></h3>
+        </ion-label>
+
+        <ion-label *ngIf="Clases.horario == 'V'">
+          <h3>Turno <span class="red">{{Clases.horario}}</span></h3>
+        </ion-label>
+      </p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

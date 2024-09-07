@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Nueva Clase</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form #claseNueva="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Nombre de la clases</ion-label>
+              <ion-input [(ngModel)]="nc.nombre" name="nombre" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Hora inicio</ion-label>
+              <ion-input [(ngModel)]="nc.horaInicio" name="horaInicio" type="tel" maxlength="2" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Hora fin</ion-label>
+              <ion-input [(ngModel)]="nc.horaFin" name="horaFin" maxlength="2" type="tel" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item lines="none">
+              <div style="display: flex;flex-direction: column;width: 100%;">
+                <ion-label style="color:gray; font-size: 14px;margin-top:16px;margin-bottom: 5px;">Horario</ion-label>
+                <div>
+                  <ion-segment (ionChange)="segmentChanged($event)" name="horario" type="text" [(ngModel)]="nc.horario"
+                    required>
+                    <ion-segment-button value="M">
+                      <ion-label>Matutino</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="V">
+                      <ion-label>Vespertino</ion-label>
+                    </ion-segment-button>
+                  </ion-segment>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Cantidad de personas</ion-label>
+              <ion-input [(ngModel)]="nc.personas" name="personas" type="tel" maxlength="2" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Coach</ion-label>
+              <ion-select [(ngModel)]="idUs" [required]="true" name="ent" (ngModelChange)="optionsFn()">
+                <ion-select-option *ngFor="let option of entrenadores" [value]="option.idUsuario">
+                  {{ option.nombre }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item style="margin-top: 7px;">
+              <ion-label style="color:gray;" position="stacked">Fecha</ion-label>
+              <ion-input name="dia" type="date" [(ngModel)]="nc.dia" required></ion-input>
+            </ion-item>
+          </div>
+          <br>
+          <div>
+            <ion-row>
+              <ion-col>
+                <ion-button (click)="nuevaClase(claseNueva)" size="large" type="submit" expand="block"
+                  class="btndorado">Agregar</ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

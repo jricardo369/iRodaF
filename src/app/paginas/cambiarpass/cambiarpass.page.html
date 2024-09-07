@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Cambiar contraseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #cambiarPass="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+
+            <div style="text-align:center;">
+              <ion-img style="margin-bottom: 15px;" src='assets/img/reset-password.png'></ion-img>
+              <label>Ingresa los datos para poder resetear tu contraseña</label>
+            </div>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Contraseña Anterior</ion-label>
+              <ion-input [(ngModel)]="cp.contraseniaAnterior" name="contraseniaAnterior" type="password" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Contraseña Nueva</ion-label>
+              <ion-input [(ngModel)]="cp.contraseniaNueva" name="contrasenia" type="password" maxlength="11" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color:gray" position="floating"> Confirmar Contraseña</ion-label>
+              <ion-input [(ngModel)]="cp.confirmarpass" name="contraseniaNueva" type="password" maxlength="11" required>
+              </ion-input>
+            </ion-item>
+          </div>
+          <br>
+          <br>
+          <div>
+            <ion-button class="btndorado" (click)="passNuevo(cambiarPass)" size="large" type="submit"
+              expand="block">Cambiar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

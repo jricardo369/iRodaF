@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Asistentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="regresar()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img src="../../assets/img/iiroda.png"></ion-img>
+  <div style="margin-bottom: 10px;text-align: center;">
+
+    <label style="font-size: 15px;">Fecha: {{fechaf}}</label><br>
+    <label style="font-size: 14px;">
+      {{descripcionHorario}}
+    </label>
+    <br>
+    <label style="font-size: 12px;margin-bottom: 5px;">
+      Clase impartida por {{profesorNombre}}
+    </label>
+    <br>
+    <label class="label-lugares">
+      {{listado?.respuesta.lugares}}
+    </label>
+    <br>
+    
+
+    
+
+  </div>
+
+  <ion-list class="animated fast fadeInDown">
+    <ion-item *ngFor="let Asistentes of listado?.respuesta.usuarios; 
+    let indice=index;" lines="none" color="gray" detail="false"
+      (click)="ponerFalta(Asistentes.idUsuario, Asistentes.nombre,Asistentes.lugar,Asistentes.asistio)">
+      <ion-card style="padding: 2px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div *ngIf="Asistentes.sexo == 'M'">
+                <label class="label-lugaresm">{{Asistentes.iniciales}}</label>
+                <label style="font-size: 12px;margin-left: 5px;">
+                  {{Asistentes.nombre}}
+                </label>
+                <label class="label-lugar">L{{Asistentes.lugar}}</label>
+                <label *ngIf="Asistentes.asistio == 'F'" class="label-asistio">{{Asistentes.asistio}}</label>
+              </div>
+              <div *ngIf="Asistentes.sexo == 'F'">
+                <label class="label-lugaresf">{{Asistentes.iniciales}}</label>
+                <label style="font-size: 12px;margin-left: 5px;">
+                  {{Asistentes.nombre}}
+                </label>
+                <label class="label-lugar">L{{Asistentes.lugar}}</label>
+                <label *ngIf="Asistentes.asistio == 'F'" class="label-asistio">{{Asistentes.asistio}}</label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

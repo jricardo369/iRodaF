@@ -1,0 +1,179 @@
+span.green {
+    background: #5ea226;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+  }
+  
+  // ion-title {
+  //   font-size: 23px;
+  // }
+  
+  ion-badge {
+    font-size: 15px;
+    align-items: center;
+  }
+  
+  ion-content ion-card {
+    width: 100%;
+    margin: 10px;
+  }
+  
+  ion-item {
+    --padding-start: 0;
+  }
+
+  span.red {
+    background: #f5d033;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+  }
+  
+  /* DOES NOT WORK - not specific enough */
+  ion-loading {
+    color: green;
+  }
+  
+  /* Works - pass "my-custom-class" in cssClass to increase specificity */
+  .my-custom-class {
+    color: green;
+  }
+  
+  .my-custom-class {
+    --background: #222;
+    --spinner-color: #fff;
+  
+    color: #fff;
+  }
+  
+  ion-img {
+    width: 85%;
+    display: block;
+    margin: auto;
+  }
+  
+  .centrar {
+    width: 30%;
+    display: block;
+    margin: auto;
+  }
+  
+  .label-membresiavenc {
+    background-color: #ded8f0;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4b2ca6;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .label-conlugares {
+    background-color: #cfe7ee;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #187e9a;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .label-clasellena {
+    background-color: #fad0d7;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #e96479;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .label-asistencia {
+    background-color: #ffe7be;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ca9716;
+    border-radius: 15px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .label-fechaf {
+    background-color: #b1e678;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #567419;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .imghorario {
+    clear: right;
+    width: 5%;
+  }
+  
+  .sinClases {
+    color: gray;
+  }
+
+  .label-estatus-a {
+    background-color: #b9e7d5;
+    padding: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 5px;
+    margin-left: 2px;
+    color: #34b181;
+    border-radius: 15px;
+    font-size: 11px;
+  }
+
+  .label-estatus-na {
+    background-color: rgb(239, 204, 196);
+    padding: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 5px;
+    margin-left: 2px;
+    color: #b44d4d;
+    border-radius: 15px;
+    font-size: 11px;
+  }
+
+  .label-lugar {
+    background-color: #fde0b4;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: 3px;
+    color: #9b681b;
+    border-radius: 15px;
+    font-size: 10px;
+  }
+  

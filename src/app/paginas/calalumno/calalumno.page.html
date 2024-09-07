@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Calendario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="admin" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <br>
+  <br>
+  <div>
+    <ion-img src="../../assets/img/iiroda.png"></ion-img>
+  </div>
+  <br>
+  <br>
+  <div>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-datetime [(ngModel)]="date" presentation="date" (click)="fechaSeleccionada(date)">
+      </ion-datetime>
+    </ion-item>
+  </div>
+</ion-content>

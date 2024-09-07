@@ -1,0 +1,10 @@
+{
+  "name": "iRoda",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

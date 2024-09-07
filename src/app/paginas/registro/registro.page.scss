@@ -1,0 +1,25 @@
+ion-title {
+  text-align: center;
+  color: #efb810;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+ion-col {
+  display: block;
+  margin: auto;
+}
+
+.sexo {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+ion-img {
+  width: 15%;
+  display: block;
+  margin: auto;
+}

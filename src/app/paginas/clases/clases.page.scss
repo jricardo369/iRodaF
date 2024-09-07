@@ -1,0 +1,101 @@
+span.green {
+  background: #5ea226;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 1.6em;
+}
+
+span.red {
+  background: #f5d033;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 15px;
+  text-align: center;
+  width: 1.6em;
+}
+
+/* DOES NOT WORK - not specific enough */
+ion-loading {
+  color: green;
+}
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+.my-custom-class {
+  color: green;
+}
+
+ion-content ion-card {
+  width: 100%;
+  margin: 10px;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+  color: #fff;
+}
+
+ion-img {
+  width: 85%;
+  display: block;
+  margin: auto;
+}
+
+.centrar {
+  width: 30%;
+  display: block;
+  margin: auto;
+}
+
+.couch {
+  color: #17a589;
+}
+
+.tipo {
+  color: gray;
+}
+
+.imgarrow {
+  float: right;
+  clear: right;
+  width: 10%;
+}
+
+.imghorario {
+  clear: right;
+  width: 10%;
+}
+
+.label-estatus-a {
+  background-color: #19b694;
+  padding: 2px;
+  margin-left: 3px;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 11px;
+}
+
+.label-estatus-i {
+  background-color: #e19e4c;
+  padding: 2px;
+  margin-left: 3px;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 11px;
+}

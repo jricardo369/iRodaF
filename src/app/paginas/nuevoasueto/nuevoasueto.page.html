@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Nuevo asueto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form #nAsueto="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <!-- <div>
+              <ion-img src='assets/icon/asueto.svg'></ion-img>
+            </div> -->
+            <br>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="stacked">Fecha</ion-label>
+              <ion-input name="fecha" type="date" [(ngModel)]="na.fecha" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="stacked">Clase</ion-label>
+              <ion-select [(ngModel)]="idClase" [required]="true" name="ent">
+                <ion-select-option *ngFor="let option of clases" [value]="option.idClase">
+                  {{ option.descCorta }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="stacked">Tipo</ion-label>
+              <ion-select [(ngModel)]="na.tipo" name="tipo" multiple="false" okText="Aceptar" cancelText="Cancelar"
+                required>
+                <ion-select-option value="1">Diario</ion-select-option>
+                <ion-select-option value="7">Semanal</ion-select-option>
+                <ion-select-option value="14">Qincenal</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+          </div>
+          <br>
+          <div>
+            <ion-row>
+              <ion-col>
+                <ion-button (click)="nuevoAsueto(nAsueto)" type="submit" size="large" expand="block" class="btndorado">
+                  Agregar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

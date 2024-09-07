@@ -1,0 +1,95 @@
+div {
+  margin-top: 45px;
+}
+
+ion-content {
+  --background: url(/assets/img/fondoLogin.jpeg) no-repeat center/cover fixed;
+  --background-repeat: no-repeat;
+  --background-attachment: fixed !important;
+}
+
+ion-input {
+  height: 40px !important;
+  --min-height: 0;
+  padding: 0 !important;
+  background-color: rgb(217, 216, 216);
+  --padding-start: 8px;
+  --padding-end: 20px;
+
+  input {
+    height: 16px !important;
+    min-height: 0 !important;
+    padding: var(--padding-start);
+    padding: var(--padding-end);
+    ::placeholder {
+      color: rgb(24, 24, 24);
+    }
+  }
+}
+
+.labeldorado {
+  color: #efb810;
+  height: 35px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+ion-title {
+  font-size: 18px;
+  text-align: center;
+}
+ion-toolbar {
+  --background: #393d42;
+  --color: #fff;
+}
+ion-img {
+  width: 70%;
+  display: block;
+  margin: auto;
+  padding-top: 40px;
+}
+a {
+  color: #fff;
+  text-align: center;
+}
+ion-col {
+  display: block;
+  margin: auto;
+}
+
+//   ion-content {
+//     // --background-image: url('.././assets/img/login.png') 0 0/100% 100% no-repeat;
+//     background-image:url(./../../../assets/img/login.jpg)
+//   }
+
+// ion-content.background {
+//   // --background: url(./assets/img/imgreg.jpg) !important;
+//   --background:url(http://3.128.191.106:8080/imgs/fondoLogin.jpg) 100% 100%  !important;
+//   --background-size : cover;
+
+// }
+
+ion-content {
+  --overflow: hidden;
+}
+
+ion-text.p {
+  color: rgb(248, 3, 3);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+.centrado {
+  text-align: center;
+}
+
+
+.footer {
+  min-height: 5em;
+  height: auto;
+  font-size: 18px;
+  text-align: center;
+}

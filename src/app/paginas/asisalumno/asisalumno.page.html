@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="clasesalumnos" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-img src="http://3.128.191.106:8080/imgs/logo.png"></ion-img>  
+  <ion-list inset="true" lines="none">
+    <ion-item>
+      <ion-label>
+        <h2>
+          Clase: {{nombre}}
+        </h2>
+        <h3>
+          Profesor: {{profesor}}
+        </h3>
+        <p>
+          {{listado?.respuesta.lugares}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <!-- Fechas de clases -->
+      <ion-list-header>
+        <ion-item>
+          <ion-label>Fecha</ion-label>
+          <!-- <ion-datetime name="fecha" [(ngModel)]="fa.fecha" 
+          placeholder="{{fechaClase | date: 'yyyy-MM-dd'}}"
+            displayFormat="YYYY-MM-DD" min="2020-07-04" max="2020-12-31" (ionChange)="cambiofecha($event)"
+            cancelText="Cancelar" doneText="Aceptar" value="{{fechaDeClase}}"
+            monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre">
+            ></ion-datetime> -->
+            <ion-datetime name="fecha" [(ngModel)]="fa.fecha"            
+            displayFormat="YYYY-MM-DD" min="2020-07-04" max="2020-12-31" (ionChange)="cambiofecha($event)"
+            cancelText="Cancelar" doneText="Aceptar" value="{{fechaDeClase}}"
+            monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre">
+            ></ion-datetime>
+        </ion-item>
+      </ion-list-header>
+      <!-- fin fecha de clases -->
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="success" expand="block" (click)="asistir(idUsuario,fa.fecha)">Apartar lugar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" expand="block" (click)="quitarAsistencia(idUsuario)">Elminar Asistencia
+          </ion-button>
+        </ion-col>
+        <ion-col *ngIf="listado?.respuesta.lugares === 0">
+          <h2>Clase Llena</h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

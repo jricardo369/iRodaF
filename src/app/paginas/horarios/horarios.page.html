@@ -1,0 +1,99 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Clases</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div style="text-align: center;">
+    <label class="label-fechaf">{{fechaf}}</label>
+  </div>
+
+  <ion-list style="text-align: center;" *ngIf="listado?.respuesta == ''">
+    <br>
+    <label class="sinClases"> Sin clases</label>
+  </ion-list>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-label>
+            <h2>
+              <ion-skeleton-text animated style="width: 30%">
+              </ion-skeleton-text>
+            </h2>
+            <br>
+            <h2>
+              <ion-skeleton-text animated style="width: 25%">
+              </ion-skeleton-text>
+            </h2>
+            <br>
+            <p>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 35%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="animated fast fadeInDown">
+    <ion-item *ngFor="let Clases of listado?.respuesta; 
+      let indice=index;" class="animated fast fadeInDown" lines="none" color="gray" detail="false"
+      class="ion-no-padding"
+      href="lugares/{{fechaf}}/{{Clases.descripcionHorario}}/{{Clases.idClase}}/{{Clases.asistencia}}/{{Clases.lugar}}/{{Clases.claseLlena}}/{{Clases.isListaEspera}}">
+      <!-- <ion-card style="padding: 3px;" *ngIf="Clases.asistencia == 'false'"> -->
+      <ion-card style="padding: 3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img *ngIf="Clases.horario == 'V'" class="imghorario" src="assets/img/moon.png">
+              <img *ngIf="Clases.horario == 'M'" class="imghorario" src="assets/img/sun.png">
+              <label style="font-size: 13px;font-weight: bold;">
+                {{Clases.descripcionHorario}}
+              </label>
+              <label *ngIf="Clases.asistencia == 'true'" class="label-asistencia">ASISTIRAS</label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style="color: rgb(174, 171, 171); font-size: 13px;">
+                {{Clases.nombre}}
+              </label>
+            </ion-col>
+            <ion-col *ngIf="idrol !== 2">
+              <img class="imgarrow" src="assets/img/arrow-right.png">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style="font-size: 13px;color: #3DAF93;font-weight: bold;">
+                Coach {{Clases.profesorNombre}}
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style="color: rgb(174, 171, 171);font-size: 13px;">
+                Lugares
+              </label>
+              <label *ngIf="Clases.lugaresDisponibles.startsWith('0')"
+                class="label-membresiavenc">{{Clases.lugaresDisponibles}}</label>
+              <label *ngIf="!Clases.lugaresDisponibles.startsWith('0') && Clases.lugaresDisponibles != 'CLASE LLENA' "
+                class="label-conlugares">{{Clases.lugaresDisponibles}}</label>
+              <label *ngIf="Clases.lugaresDisponibles == 'CLASE LLENA'"
+                class="label-clasellena">{{Clases.lugaresDisponibles}}</label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

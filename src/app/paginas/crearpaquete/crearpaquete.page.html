@@ -1,0 +1,129 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Paquetes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" (click)="back()" text="" class="dorado"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" *ngIf="idRol == 2">
+      <ion-button (click)="agregarPaquete()">
+        <ion-icon class="dorado" name="duplicate-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list style="text-align: center;" *ngIf="listado?.respuesta == ''">
+    <br>
+    <label class="sinPaquete"> Sin paquetes</label>
+  </ion-list>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="margin-top: 5px;">
+              <label>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 45%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 10%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 10%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="animated slow fadeInLeft">
+    <ion-item *ngFor="let Paquete of listado?.respuesta" lines="none" color="gray" detail="false"
+      class="ion-no-padding">
+
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <label style="font-weight: bold; font-size: 14px;">
+                Membresia {{Paquete.tipoInscripcionDesc}}
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="margin-top: 5px;" style="font-weight: bold; font-size: 12px;" class="lvencimiento">
+              <label style="font-weight: bold; color: rgb(174, 171, 171); font-size: 12px;">
+                {{Paquete.descripcionTipoPago}} </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label class="label-membresiavenc" style="font-weight: bold; font-size: 12px;"> {{Paquete.vencimiento}}
+              </label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <label class="fechainicio" style="font-weight: bold; color: rgb(174, 171, 171);font-size: 11px;">Fecha de
+                Inicio</label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+
+              <label style="font-weight: bold; font-size: 12px;" class="fechainicio"
+                format="YYYY-MM-DD">{{Paquete.fechaInicio}}</label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style="font-weight: bold; font-size: 12px;">
+                Comentarios :
+                {{Paquete.comentario}}
+              </label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

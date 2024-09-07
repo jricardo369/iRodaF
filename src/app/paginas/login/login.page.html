@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" padding class="background">
+  <form #loginForm="ngForm" novalidate>
+    <ion-img src="../../assets/img/irodaB.png"></ion-img>
+
+    <div style="width: 90%;margin: auto;">
+      <ion-input style="margin-bottom: 10px; margin-top: 30px; padding: 5px; " placeholder="Usuario" type="text"
+        [(ngModel)]="login.usuario" name="usuario" #usuario="ngModel" spellcheck="false" autocapitalize="on"
+        required></ion-input>
+      <ion-input style="margin-bottom: 10px;" placeholder="Contraseña" type="password" [(ngModel)]="login.contrasenia"
+        name="contrasenia" type="password" #contrasenia="ngModel" required></ion-input>
+
+      <ion-button style="margin-bottom: 20px;" (click)="onLogin(loginForm)" size="large" expand="block"
+        class="btndorado">
+        Iniciar Sesión
+      </ion-button>
+      <ion-button class="dorado" size="large" expand="block" fill="clear" (click)="recuperar()">
+        Recuperar contraseña
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <ion-toolbar>
+    <ion-title style="color:white; font-size: 10px;">V1.1</ion-title>
+  </ion-toolbar>
+</ion-footer>
+<!-- <ion-footer class="ion-no-border footer">
+  <label style="color:white; font-size: 10px;">V1.1</label>
+</ion-footer> -->

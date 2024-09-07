@@ -1,0 +1,99 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Clases</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="crearclass()">
+        <ion-icon class="dorado" slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar por fecha" animated (ionChange)="buscar($event)" [debounce]="250">
+  </ion-searchbar>
+</ion-header>
+<ion-content>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-label>
+            <h2>
+              <ion-skeleton-text animated style="width: 60%">
+              </ion-skeleton-text>
+            </h2>
+            <br>
+            <h2>
+              <ion-skeleton-text animated style="width: 50%">
+              </ion-skeleton-text>
+            </h2>
+            <br>
+            <p>
+              <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="animated fast fadeInDown">
+    <ion-item *ngFor="let Clases of listado?.respuesta | filtro:textoBuscar; 
+      let indice=index; "
+      href="editarclase/{{Clases.idClase}}/{{Clases.horaInicio}}/{{Clases.horaFin}}/{{Clases.horario}}/{{Clases.nombre}}/{{Clases.profesor}}/{{Clases.personas}}/{{Clases.estatus}}/{{Clases.dia}}"
+      lines="none" color="gray" detail="false" class="ion-no-padding" id="listaslide">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+
+              <label style="font-weight: bold; font-size: 13px;">
+                {{Clases.diaDescripcion}}
+              </label>
+              <label *ngIf="Clases.estatus == '1'" class="label-estatus-a">
+                A
+              </label>
+              <label *ngIf="Clases.estatus == '0'" class="label-estatus-i">
+                D
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <img *ngIf="Clases.horario == 'V'" class="imghorario" src="assets/img/moon.png">
+              <img *ngIf="Clases.horario == 'M'" class="imghorario" src="assets/img/sun.png">
+              <label style="font-size: 12px;">
+                {{Clases.descripcionHorario}}
+              </label>
+
+            </ion-col>
+            <ion-col>
+              <img class="imgarrow" src="assets/img/arrow-right.png">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style=" font-size: 13px; color: rgb(164, 160, 160)">
+                {{Clases.nombre}}
+              </label>
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label style=" font-size: 13px;color: #3DAF93;font-weight: bold;">
+                Couch: {{Clases.profesorNombre}}
+              </label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
